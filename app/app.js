@@ -19,7 +19,6 @@ window.onload = function() {
     game.physics.startSystem(Phaser.Physics.ARCADE);
 
     game.add.sprite(0, 0, 'sky');
-    game.add.sprite(0, 0, 'stickman');
 
     //  The platforms group contains the ground and the 2 ledges we can jump on
     platforms = game.add.group();
