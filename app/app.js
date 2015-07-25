@@ -2,7 +2,7 @@
 
 window.onload = function() {
 
-  var game = new Phaser.Game(640, 480, Phaser.AUTO, '', { preload: preload, create: create, update: update });
+  var game = new Phaser.Game(640, 480, Phaser.AUTO, '', { preload: preload, create: create, update: update }, false, false);
   var platforms;
   var player;
   var cursors;
@@ -10,7 +10,7 @@ window.onload = function() {
   function preload () {
     game.load.image('sky', 'assets/sky.png');
     game.load.image('ground', 'assets/platform.png');
-    game.load.spritesheet('stickman', 'assets/stickman.png', 48, 48);
+    game.load.spritesheet('bunny', 'assets/sushibunny.png', 48, 64);
     cursors = game.input.keyboard.createCursorKeys();
   }
 
@@ -34,7 +34,8 @@ window.onload = function() {
 
 
        // The player and its settings
-    player = game.add.sprite(32, game.world.height - 150, 'stickman');
+    player = game.add.sprite(32, game.world.height - 300, 'bunny');
+    player.scale.set(2,2);
 
     //  We need to enable physics on the player
     game.physics.arcade.enable(player);
@@ -45,8 +46,8 @@ window.onload = function() {
     player.body.collideWorldBounds = true;
 
     //  Our two animations, walking left and right.
-    player.animations.add('left', [1, 2], 10, true);
-    player.animations.add('right', [2, 1], 10, true);
+    //player.animations.add('left', [1, 2], 10, true);
+    //player.animations.add('right', [2, 1], 10, true);
   }
 
   function update() {
