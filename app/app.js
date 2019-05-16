@@ -7,6 +7,7 @@ window.onload = function() {
   var player;
   var cursors;
 
+  // Heres where I did something
   function preload () {
     game.load.image('sky', 'assets/sky.png');
     game.load.image('ground', 'assets/platform.png');
